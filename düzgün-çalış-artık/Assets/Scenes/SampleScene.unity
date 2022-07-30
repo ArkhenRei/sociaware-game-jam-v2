@@ -7554,6 +7554,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5931713998011199777, guid: 1fe76a4617b78664ebb23876182eaeb4, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931713998011199779, guid: 1fe76a4617b78664ebb23876182eaeb4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931713998011199779, guid: 1fe76a4617b78664ebb23876182eaeb4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67
+      objectReference: {fileID: 0}
     - target: {fileID: 5931713998179029296, guid: 1fe76a4617b78664ebb23876182eaeb4, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
