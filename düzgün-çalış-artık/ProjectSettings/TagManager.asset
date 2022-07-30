@@ -12,7 +12,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
   - 
   - 
   - 
@@ -54,6 +53,4 @@ TagManager:
   - name: midground
     uniqueID: 1838310125
     locked: 0
-  - name: midground
-    uniqueID: 4158134331
     locked: 0
