@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: midground
     uniqueID: 1838310125
+    locked: 0
+  - name: enemy
+    uniqueID: 1712564675
     locked: 0
