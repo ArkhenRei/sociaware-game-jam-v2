@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="95b615c7-76e3-42b0-9eea-231830d618cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.düzgün-çalış-artık/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.düzgün-çalış-artık/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TokenInstance.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -76,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1659171677788</updated>
       <workItem from="1659171689913" duration="1270000" />
-      <workItem from="1659173386646" duration="962000" />
+      <workItem from="1659173386646" duration="1730000" />
     </task>
     <servers />
   </component>
