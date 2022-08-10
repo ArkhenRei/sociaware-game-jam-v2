@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health = 0f;
-    [SerializeField] private float maxHealth = 100f;
+    public int currentHealth;
+    public int maxHealth = 100;
+
+    public HealthBar healthBar;
 
     private void Start()
     {
-        health = maxHealth;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
-    public void UpdateHealth(float mod)
+    private void Update()
     {
-        health += mod;
-        if (health > maxHealth)
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
-            health = maxHealth;
-        }
+            TakeDamage(30);
+        }*/
+    }
 
-        else if (health<=0f)
-        {
-            health = 0f;
-            Debug.Log("Player Respawn");
-        }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
 
+        healthBar.SetHealth(currentHealth);
     }
 }
