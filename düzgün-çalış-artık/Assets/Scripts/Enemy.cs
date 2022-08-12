@@ -50,12 +50,22 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && hasEntered)
         {
-            //hasEntered = false;
+            hasEntered = false;
             animator.SetTrigger("attack");
+            StartCoroutine(WaitEnemy());
         }
     }
+
     public void TakeEnemyDamage(int damage)
     {
+        StartCoroutine(WaitEnemy());
         healthAmount -= damage;
+    }
+
+
+    IEnumerator WaitEnemy()
+    {
+        yield return new WaitForSeconds(5f);
+
     }
 }

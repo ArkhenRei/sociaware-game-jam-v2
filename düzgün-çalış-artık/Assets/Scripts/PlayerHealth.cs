@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int currentHealth;
-    public int maxHealth = 100;
+    public int maxHealth = 90;
 
     public HealthBar healthBar;
 
@@ -18,6 +18,12 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+    }
+    public void IncreaseHealth(int increase)
+    {
+        currentHealth += increase;
 
         healthBar.SetHealth(currentHealth);
     }

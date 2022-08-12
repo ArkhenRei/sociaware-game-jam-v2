@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
 		attack = false;
 		attackCollider.enabled = false;
-
+		enemy = GetComponent<Enemy>();
 		animator = GetComponent<Animator>();
     }
 
@@ -65,23 +65,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+
 		if (other.transform.CompareTag("Trap"))
 		{
-			playerHealth.TakeDamage(90);
+			playerHealth.TakeDamage(100);
 		}
-
 		if (other.gameObject.tag == "Enemy" && attack)
 		{
-			
 			Enemy enemyHealthAmount = other.transform.GetComponent<Enemy>();
-			if (enemyHealthAmount)
+			if (enemyHealthAmount )
 			{
 				enemyHealthAmount.TakeEnemyDamage(3);
-				
 			}
 		}
+
+		if (other.transform.CompareTag("Potion"))
+		{
+			playerHealth.IncreaseHealth(playerHealth.maxHealth - playerHealth.currentHealth);
+			Destroy(other.gameObject);
+		}
 	}
-	public void Attack()
+
+
+    public void Attack()
     {
 		if (Input.GetKeyDown("e") && !attack)
 		{
