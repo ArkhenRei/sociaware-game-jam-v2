@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	public CharacterMovement controller;
 	public Animator animator;
+	public Enemy enemy;
 
 	public bool attack;
 	private float attackTimer;
@@ -68,9 +69,25 @@ public class PlayerMovement : MonoBehaviour
 		{
 			playerHealth.TakeDamage(90);
 		}
-	}
 
-    public void Attack()
+		if (other.gameObject.tag == "Enemy" && attack)
+		{
+			
+			Enemy enemyHealthAmount = other.transform.GetComponent<Enemy>();
+			if (enemyHealthAmount)
+			{
+				enemyHealthAmount.TakeEnemyDamage(3);
+				//StartCoroutine(SwordDown());
+			}
+		}
+	}
+/*	IEnumerator SwordDown()
+	{
+		Debug.Log("HEY");
+		yield return new WaitForSeconds(2);
+	}*/
+
+	public void Attack()
     {
 		if (Input.GetKeyDown("e") && !attack)
 		{

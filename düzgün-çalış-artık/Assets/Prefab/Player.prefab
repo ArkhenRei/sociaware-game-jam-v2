@@ -689,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6899426241280953028}
   animator: {fileID: 6840837352148289814}
+  enemy: {fileID: 0}
   attack: 0
   attackCooldown: 1
   attackCollider: {fileID: 9159662145737914364}

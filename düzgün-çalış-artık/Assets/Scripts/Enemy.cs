@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public bool hasEntered;
     Rigidbody2D rb;
-    public static float healthAmount;
+    public float healthAmount;
     public Animator animator;
 
     public PlayerHealth playerHealth;
@@ -38,21 +38,25 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !hasEntered)
         {
             hasEntered = true;
-            playerHealth.TakeDamage(30);
-            //hasEntered = false;
-
-            if(playerMovement.attack==true)
-                healthAmount -= 3;
+            if (!playerMovement.attack)
+            {
+                playerHealth.TakeDamage(30);
+            }
         }
+
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player") && hasEntered)
         {
-            hasEntered = false;
+            //hasEntered = false;
             animator.SetTrigger("attack");
         }
     }
-
+    public void TakeEnemyDamage(int damage)
+    {
+        Debug.Log("damage");
+        healthAmount -= damage;
+    }
 }
