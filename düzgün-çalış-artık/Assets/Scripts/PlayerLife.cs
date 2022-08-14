@@ -17,14 +17,18 @@ public class PlayerLife : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //FindObjectOfType<AudioManager>().Play("playerDie");
         if (collision.gameObject.CompareTag("Trap"))
         {
+            
             Die();
         }
     }
     private void Die()
     {
+       
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        
     }
 }

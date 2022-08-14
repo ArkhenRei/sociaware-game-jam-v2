@@ -23,13 +23,19 @@ public class PlayerMovement : MonoBehaviour
 	float horizontalMove = 0f;
 	bool jump = false;
 
+	AudioSource jumpSound;
+	AudioSource hitSound;
+
 	void Start()
     {
+		FindObjectOfType<AudioManager>().Play("backgroundSound");
 		attack = false;
 		attackCollider.enabled = false;
 		enemy = GetComponent<Enemy>();
 		animator = GetComponent<Animator>();
-    }
+		//jumpSound = GetComponent<AudioSource>();
+		//hitSound = GetComponent<AudioSource>();
+	}
 
 	// Update is called once per frame
 	void Update()
@@ -40,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetButtonDown("Jump"))
 		{
+			FindObjectOfType<AudioManager>().Play("jumpSound");
+			//jumpSound.Play();
 			jump = true;
 			animator.SetBool("isJumping", true);
 		}
@@ -53,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
 	public void OnLanding()
     {
+		
+			FindObjectOfType<AudioManager>().Play("walkSound");
+		
+		
 		animator.SetBool("isJumping", false);
     }
 
@@ -68,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
 		if (other.transform.CompareTag("Trap"))
 		{
+			
 			playerHealth.TakeDamage(100);
 		}
 		if (other.gameObject.tag == "Enemy" && attack)
@@ -91,24 +104,31 @@ public class PlayerMovement : MonoBehaviour
     {
 		if (Input.GetKeyDown("e") && !attack)
 		{
+			
 			attack = true;
 			attackTimer = attackCooldown;
 			attackCollider.enabled = true;
 			animator.SetTrigger("attack");
+			//hitSound.Play();
+			FindObjectOfType<AudioManager>().Play("SwordSound");
 		}
-        if (attack)
+		
+		if (attack)
         {
             if (attackTimer > 0)
             {
+				
 				attackTimer -= Time.deltaTime;
             }
 
 			else
 			{
+				FindObjectOfType<AudioManager>().Play("playerHurt");
 				attack = false;
 				attackCollider.enabled = false;
 			}
 		}
-    }
+		//hitSound.Play();
+	}
 
 }

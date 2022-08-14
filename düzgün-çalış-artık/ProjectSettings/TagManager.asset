@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Sword
   - Potion
+  - Collectible
   layers:
   - Default
   - TransparentFX

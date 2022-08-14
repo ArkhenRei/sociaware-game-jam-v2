@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3402771515785631892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3402771515785631893}
+  - component: {fileID: 3402771515785631978}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3402771515785631893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402771515785631892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.727554, y: 1.861283, z: -0.6586014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3402771515785631978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402771515785631892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4efd1455a730e44a05af06bc000101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: jumpSound
+    clip: {fileID: 8300000, guid: 7de74afdae319fe4180a4b5a5939b61d, type: 3}
+    volume: 0.21
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0
+  - name: walkSound
+    clip: {fileID: 8300000, guid: fc1dde7a48d962f4ba5881ba09777946, type: 3}
+    volume: 0.11
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 1
+  - name: backgroundSound
+    clip: {fileID: 8300000, guid: 02047f06ba1bf4c418bd896357d96b1c, type: 3}
+    volume: 0.19
+    pitch: 0.53
+    source: {fileID: 0}
+    loop: 0
+  - name: SwordSound
+    clip: {fileID: 8300000, guid: bc066dcd55fa8ee40a6f78039991921e, type: 3}
+    volume: 0.25
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0
+  - name: enemyDie
+    clip: {fileID: 8300000, guid: dfc2999159b162d49b361c5a0771fad2, type: 3}
+    volume: 0.71
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0
+  - name: playerHurt
+    clip: {fileID: 8300000, guid: b76b90f410d8fed44984e40b256e5cfc, type: 3}
+    volume: 0.77
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0
+  - name: playerDie
+    clip: {fileID: 8300000, guid: b9e7a7287c339f248bf89851ce1c7e18, type: 3}
+    volume: 0.86
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0

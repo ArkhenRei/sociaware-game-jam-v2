@@ -21,6 +21,8 @@ public class CharacterMovement : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	
+
 	[Header("Events")]
 	[Space]
 
@@ -35,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
