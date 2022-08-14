@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
+            FindObjectOfType<AudioManager>().Play("enemyDie");
             animator.SetTrigger("run");
             Destroy(gameObject);
         }        
@@ -58,8 +59,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeEnemyDamage(int damage)
     {
+        FindObjectOfType<AudioManager>().Play("playerHurt");
         StartCoroutine(WaitEnemy());
         healthAmount -= damage;
+        
     }
 
 
