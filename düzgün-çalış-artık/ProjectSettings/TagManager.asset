@@ -55,6 +55,9 @@ TagManager:
   - name: bg3
     uniqueID: 2564480981
     locked: 0
+  - name: bg5
+    uniqueID: 3501943901
+    locked: 0
   - name: midground
     uniqueID: 1838310125
     locked: 0
