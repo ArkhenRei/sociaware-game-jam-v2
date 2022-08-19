@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: jumpSound
-    clip: {fileID: 8300000, guid: 7de74afdae319fe4180a4b5a5939b61d, type: 3}
+    clip: {fileID: 8300000, guid: 1085c8c82d497254cb1db63ad794faec, type: 3}
     volume: 0.21
     pitch: 0.94
     source: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     loop: 0
   - name: SwordSound
     clip: {fileID: 8300000, guid: bc066dcd55fa8ee40a6f78039991921e, type: 3}
-    volume: 0.25
+    volume: 0.11
     pitch: 0.94
     source: {fileID: 0}
     loop: 0
@@ -83,6 +83,12 @@ MonoBehaviour:
   - name: playerDie
     clip: {fileID: 8300000, guid: b9e7a7287c339f248bf89851ce1c7e18, type: 3}
     volume: 0.86
+    pitch: 0.94
+    source: {fileID: 0}
+    loop: 0
+  - name: winSound
+    clip: {fileID: 8300000, guid: a25b24703c253d04b96ea7ba58e68c14, type: 3}
+    volume: 0.57
     pitch: 0.94
     source: {fileID: 0}
     loop: 0
