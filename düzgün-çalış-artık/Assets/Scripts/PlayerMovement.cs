@@ -27,12 +27,13 @@ public class PlayerMovement : MonoBehaviour
 	AudioSource hitSound;
 
 	void Start()
-    {
+	{
 		FindObjectOfType<AudioManager>().Play("backgroundSound");
 		attack = false;
 		attackCollider.enabled = false;
 		enemy = GetComponent<Enemy>();
 		animator = GetComponent<Animator>();
+		playerHealth = GetComponent<PlayerHealth>();
 		//jumpSound = GetComponent<AudioSource>();
 		//hitSound = GetComponent<AudioSource>();
 	}
@@ -52,21 +53,21 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetBool("isJumping", true);
 		}
 
-        if (playerHealth.currentHealth < 0 || playerHealth.currentHealth == 0)
-        {
+		if (playerHealth.currentHealth < 0 || playerHealth.currentHealth == 0)
+		{
 			LevelController.RestartLevel();
-        }
+		}
 		Attack();
 	}
 
 	public void OnLanding()
-    {
-		
-			FindObjectOfType<AudioManager>().Play("walkSound");
-		
-		
+	{
+
+		FindObjectOfType<AudioManager>().Play("walkSound");
+
+
 		animator.SetBool("isJumping", false);
-    }
+	}
 
 	void FixedUpdate()
 	{
@@ -75,24 +76,26 @@ public class PlayerMovement : MonoBehaviour
 		jump = false;
 	}
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+	private void OnCollisionEnter2D(Collision2D other)
+	{
 
 		if (other.transform.CompareTag("Trap"))
 		{
-			
 			playerHealth.TakeDamage(100);
 		}
 		if (other.gameObject.tag == "Enemy" && attack)
 		{
 			Enemy enemyHealthAmount = other.transform.GetComponent<Enemy>();
-			if (enemyHealthAmount )
+			if (enemyHealthAmount)
 			{
 				enemyHealthAmount.TakeEnemyDamage(3);
 			}
 		}
+	}
 
-		if (other.transform.CompareTag("Potion"))
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Potion"))
 		{
 			playerHealth.IncreaseHealth(playerHealth.maxHealth - playerHealth.currentHealth);
 			Destroy(other.gameObject);
@@ -100,11 +103,11 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 
-    public void Attack()
-    {
+	public void Attack()
+	{
 		if (Input.GetKeyDown("e") && !attack)
 		{
-			
+
 			attack = true;
 			attackTimer = attackCooldown;
 			attackCollider.enabled = true;
@@ -112,14 +115,14 @@ public class PlayerMovement : MonoBehaviour
 			//hitSound.Play();
 			FindObjectOfType<AudioManager>().Play("SwordSound");
 		}
-		
+
 		if (attack)
-        {
-            if (attackTimer > 0)
-            {
-				
+		{
+			if (attackTimer > 0)
+			{
+
 				attackTimer -= Time.deltaTime;
-            }
+			}
 
 			else
 			{
